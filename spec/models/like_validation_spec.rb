@@ -23,5 +23,4 @@ RSpec.describe Like, type: :model do
       expect(Post.find(post.id).LikesCounter).to eq(1)
     end
   end
-
 end

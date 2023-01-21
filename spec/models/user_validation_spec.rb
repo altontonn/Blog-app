@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  
   subject do
     User.new(
       Name: 'Tom',
@@ -11,7 +10,7 @@ RSpec.describe User, type: :model do
   end
 
   before { subject.save }
-  
+
   it 'Name should be present' do
     subject.Name = nil
     expect(subject).to_not be_valid
@@ -26,5 +25,4 @@ RSpec.describe User, type: :model do
     subject.PostsCounter = -1
     expect(subject).to_not be_valid
   end
-
 end
