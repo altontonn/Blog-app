@@ -11,7 +11,7 @@ RSpec.describe Comment, type: :model do
   post = Post.create(
     Title: 'my title',
     Text: 'Hello World!',
-    CommentsCounter: 0,
+    CommentsCounter: 1,
     LikesCounter: 0,
     user_id: user.id
   )

@@ -12,7 +12,7 @@ RSpec.describe Like, type: :model do
     Title: 'my title',
     Text: 'Hello World!',
     CommentsCounter: 0,
-    LikesCounter: 0,
+    LikesCounter: 1,
     user_id: user.id
   )
 
