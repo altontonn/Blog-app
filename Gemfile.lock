@@ -81,7 +81,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    concurrent-ruby (1.1.10)
+    concurrent-ruby (1.2.0)
     crass (1.0.6)
     date (3.3.3)
     debug (1.7.1)
@@ -126,7 +126,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.14.0-x64-mingw-ucrt)
+    nokogiri (1.14.1-x64-mingw-ucrt)
       racc (~> 1.4)
     pg (1.4.5)
     public_suffix (5.0.1)
@@ -150,10 +150,14 @@ GEM
       activesupport (= 7.0.4.1)
       bundler (>= 1.15.0)
       railties (= 7.0.4.1)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.4)
+    rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
     railties (7.0.4.1)
       actionpack (= 7.0.4.1)
@@ -204,7 +208,7 @@ GEM
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
-    tzinfo (2.0.5)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2022.7)
       tzinfo (>= 1.0.0)
@@ -237,6 +241,7 @@ DEPENDENCIES
   pg (~> 1.4.5)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.1)
+  rails-controller-testing
   rspec-rails
   selenium-webdriver
   sprockets-rails
@@ -250,4 +255,4 @@ RUBY VERSION
    ruby 3.2.0p0
 
 BUNDLED WITH
-   2.4.4
+   2.4.5
