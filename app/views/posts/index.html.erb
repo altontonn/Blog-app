@@ -1,7 +1,22 @@
-<h1>Posts</h1>
-
-<ul>
-  <% @posts.each do |post| %>
-    <li>Post => <%= post.Text %></li>
-  <% end %>
-</ul>
+<html>
+  <head>
+    <meta http-equiv = "Content-Type" content = "text/html; charset = iso-8859-1" />
+    <meta http-equiv = "Content-Language" content = "en-us" />
+    <title>Library Info System</title>
+    <%= stylesheet_link_tag "style" %>
+  </head>
+  <body>
+    <h1>Posts</h1>
+       <% @posts.each do |post| %>
+    <div class="bio bio2">
+      <div class="box1">
+        <p># <%= post.id %>
+        <p><%= post.Text %></p>
+      </div>
+      <div class="box2">
+        <p>Comments: <%= post.CommentsCounter %> Likes: <%= post.LikesCounter %></p>
+      </div>
+    </div>
+    <% end %>
+  </body>
+</html>

@@ -1,9 +1,26 @@
-<h1>Users</h1>
-
-<ul>
-  <% @users.each do |user| %>
-    <li>
-      <%= user.Name %>
-    </li>
-  <% end %>
-</ul>
+<html>
+  <head>
+    <meta http-equiv = "Content-Type" content = "text/html; charset = iso-8859-1" />
+    <meta http-equiv = "Content-Language" content = "en-us" />
+    <title>Library Info System</title>
+    <%= stylesheet_link_tag "style" %>
+  </head>
+  <body>
+    <h1>Users</h1>
+      <table>
+        <tr>
+          <th><h1>ID</h1></th>
+          <th><h1>Users</h1></th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <td><h2><%= user.id %></h2></td>
+          <td>
+            <h2><%= user.Name %><br></h2>
+            Number of posts: <%= user.PostsCounter %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+  </body>
+</html>
