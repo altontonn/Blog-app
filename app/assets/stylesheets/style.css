@@ -8,15 +8,15 @@ body h1 {
 }
 
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 50%;
   margin: 0 auto;
   font-family: cursive;
 }
 
-td, th {
-  border: 1px solid #dddddd;
+td,
+th {
+  border: 1px solid #ddd;
   text-align: left;
   padding: 4px;
 }
@@ -26,7 +26,7 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #ddd;
 }
 
 .bio {
@@ -43,7 +43,7 @@ tr:nth-child(even) {
 
 .button {
   background: #fff;
-  box-shadow: 2px 2px 0px;
+  box-shadow: 2px 2px 0;
   display: block;
   padding: 6px;
   margin: 0 auto;
