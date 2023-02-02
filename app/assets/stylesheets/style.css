@@ -48,3 +48,18 @@ tr:nth-child(even) {
   padding: 6px;
   margin: 0 auto;
 }
+
+.p-none {
+  flex: none;
+}
+
+.cover {
+  border: 3px solid black;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.bio3 {
+  border: none;
+  width: 100%;
+}
