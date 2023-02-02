@@ -1,6 +1,41 @@
-<h1>Username</h1>
-
-<ul>
-  <li><%= @user.Name %></li>
-  <li><%= @user.Bio %></li>
-</ul>
+<html>
+  <head>
+    <meta http-equiv = "Content-Type" content = "text/html; charset = iso-8859-1" />
+    <meta http-equiv = "Content-Language" content = "en-us" />
+    <title>Library Info System</title>
+    <%= stylesheet_link_tag "style" %>
+  </head>
+  <body>
+    <h1>Username</h1>
+    <table>
+      <tr>
+        <th><h1>ID</h1></th>
+        <th><h1>Users</h1></th>
+      </tr>
+      <tr>
+        <td><h2><%= @user.id %></h2></td>
+        <td>
+          <h2><%= @user.Name %></h2>
+          Number of posts: <%= @user.PostsCounter %>
+        </td>
+      </tr>
+    </table>
+    <div class="bio">
+      <h3>Bio</h3>
+      <p><%= @user.Bio %></p>
+    </div>
+    
+    <% @posts.each do |post| %>
+    <div class="bio bio2">
+      <div class="box1">
+        <p># <%= post.id %>
+        <p><%= post.Text %></p>
+      </div>
+      <div class="box2">
+        <p>Comments: <%= post.CommentsCounter %> Likes: <%= post.LikesCounter %></p>
+      </div>
+    </div>
+    <% end %>
+      <button class="button" type="button">See all post</button>
+  </body>
+</html>

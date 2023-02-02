@@ -1,4 +1,27 @@
-<h1>User Post</h1>
-<ul>
-    <li><%= @post.Text %></li>
-</ul>
+<html>
+  <head>
+    <meta http-equiv = "Content-Type" content = "text/html; charset = iso-8859-1" />
+    <meta http-equiv = "Content-Language" content = "en-us" />
+    <title>Library Info System</title>
+    <%= stylesheet_link_tag "style" %>
+  </head>
+  <body>
+    <h1>User Post</h1>
+    <div class="cover">
+      <div class="bio bio2 bio3">
+        <div class="box1">
+          <h3> Post #<%= @post.id %> by <span><%= @user.Name %></span> </h3>
+        </div>
+        <div class="box2">
+          <p>Comments: <%= @post.CommentsCounter %> Likes: <%= @post.LikesCounter %></p>
+        </div>
+      </div>
+      <p class="p-none"><%= @post.Text %></p>
+    </div>
+    <% @post.comments.each do |comment| %>
+      <div class="bio">
+        <b><%= @user.Name %></b>: <%= comment.Text %>
+      </div>
+    <% end %>
+  </body>
+</html>
