@@ -29,6 +29,9 @@
         <div class="box2">
           <p>Comments: <%= post.CommentsCounter %> Likes: <%= post.LikesCounter %></p>
         </div>
+        <%= form_with url: "/users/#{@user.id}/posts/#{post.id}/likes" do |f| %>
+          <%= f.submit "Like" %>
+        <% end %>
       </div>
       <div class="bio">
         <% post.comments.each do |comment| %>
