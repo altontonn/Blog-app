@@ -1,13 +1,3 @@
-<div align="center">
-
-  <img src="https://user-images.githubusercontent.com/86778388/205303614-88ade5ae-47bf-412a-944d-be2fc6667594.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-
-  <h3><b>Microverse README Template</b></h3>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -36,9 +26,11 @@
 
 # 📖 [Blog App] <a name="about-project"></a>
 
-**[Bolg App]** 
+**[Blog App]** 
 
 ## 🛠 Built With <a name="built-with"></a>
+- [Create and run necessary migration files]
+- [Match table and column names to the ERD diagram.]
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -56,6 +48,14 @@
   </ul>
 </details>
 
+## 🚀 Key Features <a name="key-features"></a>
+
+With this app you can:
+
+- Add new users, posts, comments, likes.
+- display users with their post,comments and likes
+- Save users, posts, comments, likes
+
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - comming soon ⌛
@@ -65,8 +65,6 @@
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
