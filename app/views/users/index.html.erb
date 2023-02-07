@@ -11,14 +11,18 @@
         <tr>
           <th><h1>ID</h1></th>
           <th><h1>Users</h1></th>
+          <th><h1>Image</h1></td>
         </tr>
         <% @users.each do |user| %>
         <tr>
           <td><h2><%= user.id %></h2></td>
           <td>
+          <%= link_to user_path(user) do %>
             <h2><%= user.Name %><br></h2>
+          <% end %>
             Number of posts: <%= user.PostsCounter %>
           </td>
+          <td><img class="user-img" src= <%= user.Photo %> alt="profile photo" /></td>
         </tr>
         <% end %>
       </table>
