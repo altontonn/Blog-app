@@ -1,16 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts index ', type: :system do
+RSpec.describe 'Posts index ', type: :feature do
   before(:each) do
     @user = User.create(
-      name: 'Newton',
-      photo: 'https://i.imgur.com/9yG7zZT.jpg',
-      bio: 'I am cool',
-      posts_counter: 1
+      Name: 'Newton',
+      Photo: 'https://i.imgur.com/9yG7zZT.jpg',
+      Bio: 'I am cool',
+      PostsCounter: 0
     )
     visit user_posts_path(@user)
-    @first_post = Post.create(author: @user, title: 'Post one', text: 'this is my first post')
-    @first_comment = Comment.create(post: @first_post, author: @user, text: 'nice idea')
+    @first_post = Post.create(Title: 'Hello', Text: 'this is my first post', CommentsCounter: 0, LikesCounter: 0,
+                              user_id: @user.id)
+    @first_comment = Comment.create(post_id: @first_post.id, user_id: @user.id, Text: 'nice idea')
   end
   it 'displays profile picture' do
     visit user_posts_path(@user)
@@ -18,37 +19,37 @@ RSpec.describe 'Posts index ', type: :system do
   end
   it 'displays username' do
     visit user_posts_path(@user)
-    expect(page).to have_content(@user.name)
+    expect(page).to have_content(@user.Name)
   end
   it 'displays the number of posts' do
     visit user_posts_path(@user)
-    expect(page).to have_content(@user.posts_counter)
+    expect(page).to have_content(@user.PostsCounter)
   end
   it 'displays the posts title ' do
     visit user_posts_path(@user)
-    expect(page).to have_content(@first_post.title)
+    expect(page).to have_content(@first_post.Title)
   end
   it 'displays the body of the posts ' do
     visit user_posts_path(@user)
-    expect(page).to have_content(@first_post.title)
-    expect(page).to have_content(@first_post.text)
+    expect(page).to have_content(@first_post.Title)
+    expect(page).to have_content(@first_post.Text)
   end
   it 'displays the first comment ' do
     visit user_posts_path(@user)
-    expect(page).to have_content(@first_comment.text)
+    expect(page).to have_content(@first_comment.Text)
   end
   it 'displays the number of comments ' do
     visit user_posts_path(@user)
-    expect(page).to have_content(@first_post.comments_counter)
+    expect(page).to have_content(@first_post.CommentsCounter)
   end
   it 'displays the number of likes for a post ' do
     visit user_posts_path(@user)
-    expect(page).to have_content(@first_post.likes_counter)
+    expect(page).to have_content(@first_post.LikesCounter)
   end
 
   it 'redirects post to the show page ' do
     visit user_posts_path(@user)
     click_link('See Post')
-    expect(page).to have_content(@first_post.title)
+    expect(page).to have_content('User Post')
   end
 end

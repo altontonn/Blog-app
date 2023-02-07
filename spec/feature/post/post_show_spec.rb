@@ -3,17 +3,19 @@ require 'rails_helper'
 RSpec.describe 'Posts show Page', type: :system do
   describe 'post page' do
     before(:each) do
-      @user = User.create(name: 'Newton', photo: 'https://i.imgur.com/9yG7zZT.jpg')
-      @post = Post.create(title: 'Post 1', text: 'This is post 1', author: @user)
-      @comment = Comment.create(text: 'This is the first comment', author: @user, post: @post)
-      @comment2 = Comment.create(text: 'This is a comment', author: @user, post: @post)
-      @like = Like.create(author: @user, post: @post)
-      @like2 = Like.create(author: @user, post: @post)
-      visit user_posts_path(@user, @post)
+      @user = User.create(Name: 'Newton', Photo: 'https://i.imgur.com/9yG7zZT.jpg', Bio: 'Am a ruby developer',
+                          PostsCounter: 0)
+      @post = Post.create(Title: 'Post 1', Text: 'This is post 1', CommentsCounter: 0, LikesCounter: 0,
+                          user_id: @user.id)
+      @comment = Comment.create(Text: 'This is the first comment', user_id: @user.id, post_id: @post.id)
+      @comment2 = Comment.create(Text: 'This is a comment', user_id: @user.id, post_id: @post.id)
+      @like = Like.create(user_id: @user.id, post_id: @post.id)
+      @like2 = Like.create(user_id: @user.id, post_id: @post.id)
+      visit user_post_path(@user.id, @post.id)
     end
 
     it 'I can see the post\'s title.' do
-      expect(page).to have_content('Post 1')
+      expect(page).to have_content(@post.Text)
     end
 
     it 'I can see the post\'s author.' do
@@ -21,11 +23,11 @@ RSpec.describe 'Posts show Page', type: :system do
     end
 
     it 'I can see how many comments it has.' do
-      expect(page).to have_content('2')
+      expect(page).to have_content(@post.CommentsCounter)
     end
 
     it 'I can see how many likes it has.' do
-      expect(page).to have_content('2')
+      expect(page).to have_content(@post.LikesCounter)
     end
 
     it 'I can see the post\'s body.' do
