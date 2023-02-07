@@ -11,6 +11,7 @@
       <tr>
         <th><h1>ID</h1></th>
         <th><h1>Users</h1></th>
+        <th><h1>Image</h1></th>
       </tr>
       <tr>
         <td><h2><%= @user.id %></h2></td>
@@ -18,12 +19,14 @@
           <h2><%= @user.Name %></h2>
           Number of posts: <%= @user.PostsCounter %>
         </td>
+        <td><img class="user-img" src= <%= @user.Photo %> alt="profile photo" /></td>
       </tr>
     <table>
     <% @user.posts.each do |post| %>
       <div class="bio bio2">
         <div class="box1">
-          <h3>Post #<%= post.id %></h3>
+          <p>Post #<%= post.id %></p>
+          <h2><%= post.Title %></h2>
           <p><%= post.Text %>
         </div>
         <div class="box2">
@@ -38,7 +41,9 @@
           <b><%= @user.Name %></b>: <%= comment.Text %>
         <% end %>
       </div>
+      <button class="button" type="button">
+        <%= link_to "See Post", user_post_path(post.user_id, post.id) %>
+      </button>
     <% end %>
-    <button class="button" type="button"><b>Pagination</b></button>
   </body>
 </html>
