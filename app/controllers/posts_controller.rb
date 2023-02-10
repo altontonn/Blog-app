@@ -2,7 +2,12 @@ class PostsController < ApplicationController
   def index
     @user = User.includes(posts: [:comments]).find(params[:user_id])
     @posts = Post.where(user_id: @user.id)
-    render json: @posts
+    # render json: @posts
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @posts }
+      format.json { render :json => @posts }
+    end
   end
 
   def new
@@ -29,6 +34,7 @@ class PostsController < ApplicationController
     @comments = Comment.where(post_id: params[:id])
     respond_to do |format|
       format.html
+      format.xml { render :xml => @post }
       format.json { render :json => @post }
       format.json { render :json => @comments }
     end

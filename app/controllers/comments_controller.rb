@@ -1,4 +1,15 @@
 class CommentsController < ApplicationController
+  def index
+    @user = User.includes(posts: [:comments]).find(params[:user_id])
+    @posts = Post.where(user_id: @user.id)
+    @comments = Comment.where(post_id: @posts)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @comments }
+      format.json { render :json => @comments }
+    end
+  end
+
   def new
     @comment = Comment.new
     respond_to do |format|
@@ -18,6 +29,13 @@ class CommentsController < ApplicationController
           redirect_to user_posts_path(current_user.id, @post)
         else
           flash[:error] = 'Error'
+        end
+      end
+      format.json do
+        if @comment.save
+          render json: @comment, status: :created, location: @comment
+        else
+          render json: @comment.errors, status: :unprocessable_entity
         end
       end
     end

@@ -257,7 +257,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
-  active_model_serializers
+  active_model_serializers (~> 0.10.13)
   bootsnap
   cancancan
   capybara

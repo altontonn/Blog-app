@@ -61,7 +61,7 @@ group :development, :test do
 end
 
 gem 'rails-controller-testing'
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.10.13'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
