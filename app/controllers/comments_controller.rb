@@ -5,8 +5,8 @@ class CommentsController < ApplicationController
     @comments = Comment.where(post_id: @posts)
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @comments }
-      format.json { render :json => @comments }
+      format.xml { render xml: @comments }
+      format.json { render json: @comments }
     end
   end
 
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html do
         if @comment.save
-          flash[:success] = 'Comment Added Successfully'
+          flash[:success] = 'Comments Added Successfully'
           redirect_to user_posts_path(current_user.id, @post)
         else
           flash[:error] = 'Error'
