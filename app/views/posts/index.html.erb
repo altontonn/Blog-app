@@ -39,6 +39,9 @@
       <div class="bio">
         <% post.comments.each do |comment| %>
           <b><%= @user.Name %></b>: <%= comment.Text %>
+          <% if can? :manage, post %>
+            <%= button_to "Delete Comment", user_post_comment_path(@user, post, comment), method: :delete, class:"delete comment" %>
+          <% end %>
         <% end %>
       </div>
       <button class="button" type="button">

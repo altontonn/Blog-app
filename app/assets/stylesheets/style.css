@@ -49,6 +49,10 @@ tr:nth-child(even) {
   margin: 0 auto;
 }
 
+.button a {
+  text-decoration: none;
+}
+
 .p-none {
   flex: none;
 }

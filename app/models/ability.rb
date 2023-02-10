@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -12,12 +10,11 @@ class Ability
       can :manage, :all
     else
       can :manage, Post, user_id: user.id
-      # can :manage, Comment, author_id: user.id
+      can :manage, Comment, author_id: user.id
       # can :create, Post, author_id: user.id
       # can :create, Comment, author_id: user.id
       # can :destroy, Post, author_id: user.id
       # can :destroy, Comment, author_id: user.id
     end
-
   end
 end
