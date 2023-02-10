@@ -5,8 +5,8 @@ class PostsController < ApplicationController
     # render json: @posts
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @posts }
-      format.json { render :json => @posts }
+      format.xml { render xml: @posts }
+      format.json { render json: @posts }
     end
   end
 
@@ -34,9 +34,9 @@ class PostsController < ApplicationController
     @comments = Comment.where(post_id: params[:id])
     respond_to do |format|
       format.html
-      format.xml { render :xml => @post }
-      format.json { render :json => @post }
-      format.json { render :json => @comments }
+      format.xml { render xml: @post }
+      format.json { render json: @post }
+      format.json { render json: @comments }
     end
   end
 
