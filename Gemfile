@@ -60,8 +60,8 @@ group :development, :test do
   gem 'webdrivers'
 end
 
-gem 'rails-controller-testing'
 gem 'active_model_serializers', '~> 0.10.13'
+gem 'rails-controller-testing'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
