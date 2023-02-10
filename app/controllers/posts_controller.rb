@@ -2,13 +2,11 @@ class PostsController < ApplicationController
   def index
     @user = User.includes(posts: [:comments]).find(params[:user_id])
     @posts = Post.where(user_id: @user.id)
+    render json: @posts
   end
 
   def new
     @post = Post.new
-    respond_to do |format|
-      format.html { render :new, locals: { post: @post } }
-    end
   end
 
   def create
@@ -29,6 +27,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @posts = @user.posts.find(params[:id])
     @comments = Comment.where(post_id: params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render :json => @post }
+      format.json { render :json => @comments }
+    end
   end
 
   def destroy
