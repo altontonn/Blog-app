@@ -118,6 +118,21 @@ To run tests, run the following command:
 - [Linkedin](https://www.linkedin.com/in/newton-alumasa/)
 
 
+👤 **Richard Chileya**
+
+- GitHub: [@RichardChileya](https://github.com/RichardChileya)
+- Twitter: [@KarayamanEmre](https://twitter.com/RichardChileya)
+- LinkedIn: [Emre Karayaman](https://www.linkedin.com/in/RichardChileya/)
+
+
+👤 **Usirusen Ikon**
+
+- GitHub: [@Usirusen Ikon](https://github.com/Usirusen_Ikon)
+- Twitter: [@Usirusen Ikon](https://twitter.com/Usirusen_Ikon)
+- LinkedIn: [@Usirusen Ikon](https://www.linkedin.com/in/Usirusen_Ikon/)
+
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!--  Future Features -->
@@ -127,13 +142,10 @@ To run tests, run the following command:
 ### Future Features
 
 - Account creation
+- A search bar 
+- Account Delete 
+- User Chat 
 
-Users will be able to create accounts in the blog app
-
-- Post creation
-
-Users will be able to create, read, edit and delete posts
-Users will also be able to like and comment on each others posts
 
 <!-- CONTRIBUTING -->
 
