@@ -21,24 +21,6 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.post_id = params[:post_id]
-
-    respond_to do |format|
-      format.html do
-        if @comment.save
-          flash[:success] = 'Comments Added Successfully'
-          redirect_to user_posts_path(current_user.id, @post)
-        else
-          flash[:error] = 'Error'
-        end
-      end
-      format.json do
-        if @comment.save
-          render json: @comment, status: :created, location: @comment
-        else
-          render json: @comment.errors, status: :unprocessable_entity
-        end
-      end
-    end
   end
 
   def destroy

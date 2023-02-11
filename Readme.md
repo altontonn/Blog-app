@@ -109,7 +109,7 @@ To run tests, run the following command:
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Newton Alumasa**
 
@@ -121,7 +121,6 @@ To run tests, run the following command:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!--  Future Features -->
-🔭 Future Features](#future-feature
 
 ## 🔭 Future Features <a name="future-feature">back</a>
 
@@ -129,8 +128,7 @@ To run tests, run the following command:
 
 - Account creation
 
-Users will be able to create accounts to log in or out
-Post creation and 
+Users will be able to create accounts in the blog app
 
 - Post creation
 
