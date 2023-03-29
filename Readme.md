@@ -117,22 +117,6 @@ To run tests, run the following command:
 - [Twitter](https://twitter.com/AlumasaNewton)
 - [Linkedin](https://www.linkedin.com/in/newton-alumasa/)
 
-
-👤 **Richard Chileya**
-
-- GitHub: [@RichardChileya](https://github.com/RichardChileya)
-- Twitter: [@KarayamanEmre](https://twitter.com/RichardChileya)
-- LinkedIn: [Emre Karayaman](https://www.linkedin.com/in/RichardChileya/)
-
-
-👤 **Usirusen Ikon**
-
-- GitHub: [@Usirusen Ikon](https://github.com/Usirusen_Ikon)
-- Twitter: [@Usirusen Ikon](https://twitter.com/Usirusen_Ikon)
-- LinkedIn: [@Usirusen Ikon](https://www.linkedin.com/in/Usirusen_Ikon/)
-
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!--  Future Features -->
