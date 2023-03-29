@@ -1,9 +1,9 @@
 class CreateComment < ActiveRecord::Migration[7.0]
   def change
     create_table :comments do |t|
-      t.string :Text
-      t.datetime :UpdatedAt
-      t.datetime :CreatedAt
+      t.integer 'author_id'
+      t.integer 'post_id'
+      t.string :text
 
       t.timestamps
     end
