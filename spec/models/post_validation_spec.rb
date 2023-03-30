@@ -30,4 +30,16 @@ RSpec.describe Post, type: :model do
     subject.likes_counter = 'g'
     expect(subject).to_not be_valid
   end
+
+  post = Post.create(
+    title: 'my title',
+    text: 'Hello World!',
+    comments_counter: 5,
+    likes_counter: 1
+  )
+  context 'recent comments' do
+    it 'checks five recent comments' do
+      expect(post.comments_counter).to eq(5)
+    end
+  end
 end
