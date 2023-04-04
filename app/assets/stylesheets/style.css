@@ -1,0 +1,69 @@
+body {
+  font-family: cursive;
+  font-weight: bold;
+}
+
+body h1 {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin: 0 auto;
+  font-family: cursive;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 4px;
+}
+
+td {
+  padding: 0 1.1rem;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+.bio {
+  border: 3px solid black;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.bio2 {
+  justify-content: space-between;
+  align-items: end;
+  display: flex;
+}
+
+.button {
+  background: #fff;
+  box-shadow: 2px 2px 0;
+  display: block;
+  padding: 6px;
+  margin: 0 auto;
+}
+
+.button a {
+  text-decoration: none;
+}
+
+.p-none {
+  flex: none;
+}
+
+.cover {
+  border: 3px solid black;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.bio3 {
+  border: none;
+  width: 100%;
+}
