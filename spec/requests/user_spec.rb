@@ -12,7 +12,7 @@ RSpec.describe 'Routes', type: :request do
 
   describe 'users#show' do
     it 'returns a users record!' do
-      get '/users/14'
+      get '/users/1'
       expect(response).to have_http_status(:ok)
       expect(response.body).to include('Username')
       expect(response).to render_template(:show)
