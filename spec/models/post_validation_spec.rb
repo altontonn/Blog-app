@@ -5,7 +5,7 @@ RSpec.describe Post, type: :model do
     Post.new(
       title: 'Hello',
       text: 'This is my first post',
-      author_id: 1
+      user_id: 1
     )
   end
 
