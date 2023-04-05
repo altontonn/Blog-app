@@ -1,4 +1,4 @@
-<html>
+   <html>
   <head>
     <meta http-equiv = "Content-Type" content = "text/html; charset = iso-8859-1" />
     <meta http-equiv = "Content-Language" content = "en-us" />
@@ -7,20 +7,27 @@
   </head>
   <body>
     <h1>Users</h1>
-      <table>
+    <table>
+      <tr>
+        <th>
+          <h1>ID</h1>
+        </th>
+        <th>
+          <h1>Users</h1>
+        </th>
+      </tr>
+      <% @users.each do |user| %>
         <tr>
-          <th><h1>ID</h1></th>
-          <th><h1>Users</h1></th>
-        </tr>
-        <% @users.each do |user| %>
-        <tr>
-          <td><h2><%= user.id %></h2></td>
           <td>
-            <h2><%= user.Name %><br></h2>
-            Number of posts: <%= user.PostsCounter %>
+            <h2><%= user.id %></h2>
+          </td>
+          <td>
+            <h2><%= user.name %><br>
+            </h2>
+            Number of posts: <%= user.posts_counter %>
           </td>
         </tr>
-        <% end %>
-      </table>
+      <% end %>
+    </table>
   </body>
 </html>
