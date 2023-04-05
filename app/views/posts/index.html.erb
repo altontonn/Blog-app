@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="bio">
-              <% post.comments.each do |comment| %>
+              <% @posts.recent_comment.each do |comment| %>
                 <b><%= @user.name %></b>: <%= comment.text %>
               <% end %>
             </div>

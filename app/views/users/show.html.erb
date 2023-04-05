@@ -30,7 +30,7 @@
       <h3>Bio</h3>
       <p><%= @user.bio %></p>
     </div>
-    <% @posts.each do |post| %>
+    <% @user.three_recent_post.each do |post| %>
       <div class="bio bio2">
         <div class="box1">
           <p># <%= post.id %>
