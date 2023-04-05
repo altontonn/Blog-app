@@ -52,12 +52,12 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  # gem 'debug', platorms: %i[mri mingw x64_mingw]
-  gem 'capybara'
-  gem 'database_cleaner'
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  # gem 'capybara'
+  # gem 'database_cleaner'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  # gem 'selenium-webdriver'
+  # gem 'webdrivers'
 end
 
 gem 'active_model_serializers', '~> 0.10.13'
@@ -72,8 +72,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'cancancan'
-  gem 'letter_opener'
+  # gem 'cancancan'
+  # gem 'letter_opener'
 end
 
 group :test do
