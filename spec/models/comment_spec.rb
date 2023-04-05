@@ -13,11 +13,11 @@ RSpec.describe Comment, type: :model do
     text: 'Hello World!',
     comments_counter: 1,
     likes_counter: 0,
-    author_id: user.id
+    user_id: user.id
   )
 
   Comment.create(
-    author_id: user.id,
+    user_id: user.id,
     post_id: post.id,
     text: 'A nice post'
   )

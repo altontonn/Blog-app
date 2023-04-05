@@ -13,10 +13,10 @@ RSpec.describe Like, type: :model do
     text: 'Hello World!',
     comments_counter: 0,
     likes_counter: 1,
-    author_id: user.id
+    user_id: user.id
   )
 
-  Like.create(author_id: user.id, post_id: post.id)
+  Like.create(user_id: user.id, post_id: post.id)
 
   context '#increment_post_likes_counter' do
     it 'increments post likes counter by 1' do
