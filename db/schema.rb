@@ -51,8 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_095005) do
     t.integer "posts_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "address"
-    t.index ["address"], name: "index_users_on_address"
   end
 
   add_foreign_key "comments", "posts"
