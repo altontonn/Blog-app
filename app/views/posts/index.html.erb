@@ -18,30 +18,33 @@
       </tr>
       <tr>
         <td>
+          <h2><%= @user.id%></h2>
+        </td>
+        <td>
           <h2><%= @user.name %></h2>
           Number of posts: <%= @user.posts_counter %>
         </td>
       </tr>
-    <table>
-    <% @user.posts.each do |post| %>
-      <div class="bio bio2">
-        <div class="box1">
-          <h3>Post #<%= post.id %></h3>
-          <p><%= post.text %>
-        </div>
-        <div class="box2">
-          <p>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
-        </div>
-        <%= form_with url: "/users/#{@user.id}/posts/#{post.id}/likes" do |f| %>
-          <%= f.submit "Like" %>
-        <% end %>
-      </div>
-      <div class="bio">
-        <% post.comments.each do |comment| %>
-          <b><%= @user.name %></b>: <%= comment.text %>
-        <% end %>
-      </div>
-    <% end %>
-    <button class="button" type="button"><b>Pagination</b></button>
-  </body>
-</html>
+      <table>
+        <% @user.posts.each do |post| %>
+          <div class="bio bio2">
+            <div class="box1">
+              <h3>Post #<%= post.id %></h3>
+              <p><%= post.text %>
+              </div>
+              <div class="box2">
+                <p>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
+              </div>
+              <%= form_with url: "/users/#{@user.id}/posts/#{post.id}/likes" do |f| %>
+                <%= f.submit "Like" %>
+              <% end %>
+            </div>
+            <div class="bio">
+              <% post.comments.each do |comment| %>
+                <b><%= @user.name %></b>: <%= comment.text %>
+              <% end %>
+            </div>
+          <% end %>
+          <button class="button" type="button"><b>Pagination</b></button>
+        </body>
+      </html>
