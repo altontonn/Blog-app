@@ -1,11 +1,11 @@
 <%= form_with model: @post, url:user_posts_path, method: :post, local: true, scope: :post do |f| %>
   <div>
-    <%= f.label :Title %><br>
-    <%= f.text_field :Title %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
   </div>
   <div>
-    <%= f.label :Text %><br>
-    <%= f.text_field :Text %>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
   </div>
    <%= f.submit "Add Post" %>
 <% end %>
