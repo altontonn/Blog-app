@@ -5,6 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.where(user_id: @user.id).find_by(id: params[:id])
+    @posts = Post.where(user_id: @user.id)
   end
 end
