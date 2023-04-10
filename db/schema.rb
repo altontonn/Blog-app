@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_145839) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.string "Text"
+    t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -34,10 +34,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_145839) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "Title"
-    t.string "Text"
-    t.integer "CommentsCounter"
-    t.integer "LikesCounter"
+    t.string "title"
+    t.string "text"
+    t.integer "comments_counter"
+    t.integer "likes_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -45,14 +45,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_145839) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "Name"
-    t.string "Photo"
-    t.text "Bio"
-    t.integer "PostsCounter"
+    t.string "name"
+    t.string "photo"
+    t.text "bio"
+    t.integer "posts_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "address"
-    t.index ["address"], name: "index_users_on_address"
   end
 
   add_foreign_key "comments", "posts"

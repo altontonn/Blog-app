@@ -14,8 +14,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.CommentsCounter = 0
-    @post.LikesCounter = 0
+    @post.comments_counter = 0
+    @post.likes_counter = 0
     if @post.save
       flash[:success] = 'Post Added Successfully'
       redirect_to user_posts_path(current_user)
@@ -30,6 +30,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:Title, :Text)
+    params.require(:post).permit(:title, :text)
   end
 end

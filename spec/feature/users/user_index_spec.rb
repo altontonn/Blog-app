@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe 'User index page', type: :feature do
   before(:each) do
     @user = User.create(
-      Name: 'Newton',
-      Photo: 'https://i.imgur.com/9yG7zZT.jpg',
-      Bio: 'I love basketball',
-      PostsCounter: 1
+      name: 'Newton',
+      photo: 'https://i.imgur.com/9yG7zZT.jpg',
+      bio: 'I love basketball',
+      posts_counter: 1
     )
     visit users_path
   end
