@@ -34,7 +34,7 @@ RSpec.describe 'Post show page', type: :feature do
 
   it "displays the post's author" do
     visit user_post_path(@user, @post)
-    expect(page).to have_content(@post.user_id)
+    expect(page).to have_content(@user.name)
   end
 
   it 'displays the number of comments on the post' do
@@ -54,7 +54,7 @@ RSpec.describe 'Post show page', type: :feature do
   it "displays each commentor's username" do
     visit user_post_path(@user, @post)
     @post.comments.each do |comment|
-      expect(page).to have_content(comment.user_id)
+      expect(page).to have_content(comment.user.name)
     end
   end
 
