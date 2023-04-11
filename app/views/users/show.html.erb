@@ -31,11 +31,11 @@
       <p><%= @user.bio %></p>
       <img class="img-photo" src= <%= @user.photo %> alt="profile photo" />
     </div>
-    <% @user.three_recent_post.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="bio bio2">
         <div class="box1">
           <p># <%= post.id %>
-            <p><%=link_to post.title, user_post_path(@user, post) %>
+            <p><%= link_to post.title, user_post_path(@user, post) %>
               <p><%= post.text %></p>
             </div>
             <div class="box2">

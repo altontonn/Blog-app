@@ -1,15 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe 'index', type: :feature do
-  before :each do
+  before(:each) do
     @user = User.create(
-      name: 'Richard',
-      photo: 'https://picsum.photos/300/200',
-      bio: 'Teacher from England',
-      posts_counter: 4
+      name: 'Tom',
+      photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+      bio: 'Teacher from Mexico.',
+      posts_counter: 1
     )
-    @post1 = Post.create(user_id: @user.id, title: 'Hello', text: 'Hello World!')
-    
+
+    @post = Post.create(
+      title: 'Hello',
+      text: 'This is my first post',
+      comments_counter: 3,
+      likes_counter: 4,
+      user_id: @user.id
+    )
+    visit user_path(@user)
   end
 
   scenario 'shows the profile picture for each user' do
@@ -36,20 +43,20 @@ RSpec.describe 'index', type: :feature do
     visit user_path(@user)
     posts = @user.three_recent_post
     posts.each do |post|
-      expect(page).to_have_content(post.title)
-      expect(page).to_have_content(post.text)
+      expect(page).to have_content(post.title)
+      expect(page).to have_content(post.text)
     end
   end
 
   scenario 'shows button that lets user view all of a user\'s posts.' do
     visit user_path(@user)
-    expect(page).to have_link("See all posts", href: user_posts_path(@user))
+    expect(page).to have_link('See all posts', href: user_posts_path(@user))
   end
 
-  scenario 'when click user\'s post, it redirects me to that post\'s show page.' do
+  scenario 'redirects me to that post\'s show page' do
     visit user_path(@user)
-    click_link('Hello')
-    expect(page).to have_current_path(user_post_path(@user, @post1))
+    click_link(@post.title)
+    expect(page).to have_current_path(user_post_path(@user, @post))
   end
 
   scenario 'redirected to that user\'s show page' do

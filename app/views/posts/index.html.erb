@@ -27,14 +27,14 @@
           <h2><%= @user.name %></h2>
           Number of posts: <%= @user.posts_counter %>
         </td>
-        <td><img class="user-img" src= <%= @user.photo %> alt="profile photo" /></td>
+        <td><img class="img-photo" src= <%= @user.photo %> alt="profile photo" /></td>
       </tr>
       <table>
         <% @user.posts.each do |post| %>
           <div class="bio bio2">
             <div class="box1">
               <p>Post #<%= post.id %></p>
-              <h2><%= post.title %></h2>
+              <h2><%= link_to post.title, user_post_path(@user, post) %></h2>
               <p><%= post.text %>
               </div>
               <div class="box2">
@@ -53,5 +53,6 @@
               <%= link_to "See Post", user_post_path(post.user_id, post.id) %>
             </button>
           <% end %>
+          <button class="paginate">pagination</button>
         </body>
       </html>
