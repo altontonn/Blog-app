@@ -29,18 +29,20 @@
     <div class="bio">
       <h3>Bio</h3>
       <p><%= @user.bio %></p>
+      <img class="img-photo" src= <%= @user.photo %> alt="profile photo" />
     </div>
     <% @posts.each do |post| %>
       <div class="bio bio2">
         <div class="box1">
           <p># <%= post.id %>
-            <p><%= post.text %></p>
+            <p><%= link_to post.title, user_post_path(@user, post) %>
+              <p><%= post.text %></p>
+            </div>
+            <div class="box2">
+              <p>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
+            </div>
           </div>
-          <div class="box2">
-            <p>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
-          </div>
-        </div>
-      <% end %>
-      <button class="button" type="button">See all post</button>
-    </body>
-  </html>
+        <% end %>
+        <button class="button"><%= link_to 'See all posts', user_posts_path(@user)%></button>
+      </body>
+    </html>

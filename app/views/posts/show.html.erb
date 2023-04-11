@@ -16,6 +16,7 @@
           <p>Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %></p>
         </div>
       </div>
+      <p class="p-none"><%= @post.title %></p>
       <p class="p-none"><%= @post.text %></p>
     </div>
     <% @post.comments.each do |comment| %>
