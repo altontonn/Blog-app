@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'index', type: :feature do
-  before (:each) do
+  before(:each) do
     @user = User.create(
       name: 'Richard',
       photo: 'https://picsum.photos/300/200',
@@ -9,9 +9,9 @@ RSpec.describe 'index', type: :feature do
       posts_counter: 1
     )
     @post = Post.create(
-      title: 'Hello', 
+      title: 'Hello',
       text: 'Hello World!',
-      comments_counter: 1, 
+      comments_counter: 1,
       likes_counter: 2,
       user_id: @user.id
     )
@@ -49,7 +49,7 @@ RSpec.describe 'index', type: :feature do
 
   scenario 'shows button that lets user view all of a user\'s posts.' do
     visit user_path(@user)
-    expect(page).to have_link("See all posts", href: user_posts_path(@user))
+    expect(page).to have_link('See all posts', href: user_posts_path(@user))
   end
 
   scenario 'redirects me to that post\'s show page' do
