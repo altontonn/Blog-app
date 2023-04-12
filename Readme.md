@@ -109,7 +109,7 @@ To run tests, run the following command:
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Newton Alumasa**
 
@@ -117,25 +117,19 @@ To run tests, run the following command:
 - [Twitter](https://twitter.com/AlumasaNewton)
 - [Linkedin](https://www.linkedin.com/in/newton-alumasa/)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!--  Future Features -->
-🔭 Future Features](#future-feature
 
 ## 🔭 Future Features <a name="future-feature">back</a>
 
 ### Future Features
 
 - Account creation
+- A search bar 
+- Account Delete 
+- User Chat 
 
-Users will be able to create accounts to log in or out
-Post creation and 
-
-- Post creation
-
-Users will be able to create, read, edit and delete posts
-Users will also be able to like and comment on each others posts
 
 <!-- CONTRIBUTING -->
 

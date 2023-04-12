@@ -4,6 +4,6 @@ class CreateComment < ActiveRecord::Migration[7.0]
       t.string :text
 
       t.timestamps
-    end
-  end
+      end
+   end
 end

@@ -27,18 +27,11 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-    @posts = @user.posts.find(params[:id])
-    @comments = Comment.where(post_id: params[:id])
   end
 
-  def destroy
-    @user = User.find(params[:user_id])
-    @posts = @user.posts.find(params[:id])
-    @posts.destroy
-    redirect_to user_path(params[:user_id]), notice: 'Post deleted Successfully'
-  end
+  private
 
   def post_params
-    params.require(:post).permit(:Title, :Text)
+    params.require(:post).permit(:title, :text)
   end
 end
