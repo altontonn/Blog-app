@@ -123,6 +123,10 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jsonapi-renderer (0.2.2)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -268,6 +272,7 @@ DEPENDENCIES
   devise
   importmap-rails
   jbuilder
+  letter_opener
   pg (~> 1.4.5)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.1)
@@ -282,7 +287,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.2p53
+   ruby 3.2.0p0
 
 BUNDLED WITH
    2.4.10
