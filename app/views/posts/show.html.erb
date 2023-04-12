@@ -8,6 +8,9 @@
   <body>
     <h1>User Post</h1>
     <div class="cover">
+      <% if can? :manage, @posts %>
+        <%= button_to "Delete Post", user_post_path(user_id: @user.id, post_id: @posts.id), method: :delete, class:"delete post" %>
+      <% end %>
       <div class="bio bio2 bio3">
         <div class="box1">
           <h3> Post #<%= @post.id %> by <span><%= @user.name %></span> </h3>
@@ -16,7 +19,6 @@
           <p>Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %></p>
         </div>
       </div>
-      <p class="p-none"><%= @post.title %></p>
       <p class="p-none"><%= @post.text %></p>
     </div>
     <% @post.comments.each do |comment| %>

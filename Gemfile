@@ -55,6 +55,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'letter_opener'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
@@ -73,7 +74,6 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   # gem 'cancancan'
-  # gem 'letter_opener'
 end
 
 group :test do
