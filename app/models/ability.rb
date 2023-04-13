@@ -9,7 +9,7 @@ class Ability
     can :read, Comment
     #   return unless user.admin?
     #   can :manage, :all
-    if user.role =='admin'
+    if user.role == 'admin'
       can :manage, :all
     else
       can :manage, Post, user_id: user.id

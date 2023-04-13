@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.find(params[:id])
     @posts.destroy
-    redirect_to user_path(params[:user_id]), notice: 'post deleted successfully';
+    redirect_to user_path(params[:user_id]), notice: 'post deleted successfully'
   end
 
   def show
