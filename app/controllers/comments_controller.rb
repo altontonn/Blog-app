@@ -1,4 +1,15 @@
 class CommentsController < ApplicationController
+  def index
+    @user = User.includes(posts: [:comments]).find(params[:user_id])
+    @posts = Post.where(user_id: @user_id)
+    @comments = Comment.where(post_id: @posts)
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @comments }
+      format.json { render json: @comments }
+    end
+  end
+
   def new
     @comment = Comment.new
     respond_to do |format|
