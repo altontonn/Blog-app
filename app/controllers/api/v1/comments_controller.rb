@@ -1,4 +1,4 @@
-class Ap1::V1::CommentsController < ApplicationController
+class Api::V1::CommentsController < ApplicationController
   def index
     @user = User.includes(posts: [:comments]).find(params[:user_id])
     @posts = Post.where(user_id: @user.id)

@@ -1,1 +1,3 @@
-
+<% if current_user %>
+  <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: false }, class: "logout_button", class:"nav-link btn btn-danger px-1 text-white" %>
+<% end %>
