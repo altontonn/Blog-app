@@ -1,0 +1,105 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/users":
+    get:
+      summary: returns a list of users
+      tags:
+      - Users
+      responses:
+        '200':
+          description: users found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  photo:
+                    type: string
+                  bio:
+                    type: string
+                  posts_counter:
+                    type: string
+                  created_at:
+                    type: string
+                    format: date-time
+                  updated_at:
+                    type: string
+                    format: date-time
+                required:
+                - id
+                - name
+                - photo
+                - posts_counter
+                - created_at
+                - updated_at
+        '401':
+          description: Bad request
+  "/api/v1/users/1/posts":
+    get:
+      summary: returns a list of posts
+      tags:
+      - Posts
+      responses:
+        '200':
+          description: posts found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  text:
+                    type: string
+                  user_id:
+                    type: integer
+                required:
+                - id
+                - title
+                - text
+                - user_id
+        '401':
+          description: Bad request
+  "/api/v1/users/1/posts/1/comments":
+    get:
+      summary: returns a list of comments
+      tags:
+      - Comments
+      responses:
+        '200':
+          description: comments found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  text:
+                    type: string
+                  user_id:
+                    type: integer
+                  post_id:
+                    type: integer
+                required:
+                - id
+                - text
+                - user_id
+                - post_id
+        '401':
+          description: Bad request
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
